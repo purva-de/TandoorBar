@@ -1,0 +1,15 @@
+# Large media files
+*.mp4
+*.mov
+*.avi
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db

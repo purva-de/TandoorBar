@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tandoor Bar | Modern Indian Gastronomy</title>
+  <meta name="description" content="Tandoor Bar — Modern Indian dining, clay-oven kebabs, royal dum biryanis, and rich heritage curries." />
+  <meta name="theme-color" content="#FFFFFF" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Tandoor Bar | Modern Indian Gastronomy" />
+  <meta property="og:description" content="Contemporary clay-oven craft, slow charcoal embers, and iconic Indian culinary heritage." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/tandoori_chicken_hero.jpg" />
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Floating Minimal Actions Dock (Discreet Bottom Corner for Theme & Bag) -->
+  <aside class="floating-dock" aria-label="Quick Actions">
+    <button type="button" class="floating-dock-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Toggle Light / Dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <button type="button" class="floating-dock-btn cart-dock-btn" id="cartBtn" aria-label="Open ordering bag" title="Your Ordering Bag">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+      <span class="cart-count-badge" id="cartCountBadge">2</span>
+    </button>
+  </aside>
+
+  <main>
+    <!-- =======================================================================
+         SECTION 1: HOME / HERO (Modern Indian Editorial Craft)
+         ======================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        
+        <!-- Live Status Pill (Cool Landing Page Element) -->
+        <div class="hero-status-pill-wrap">
+          <div class="hero-status-pill">
+            <span class="status-pulse-dot" aria-hidden="true"></span>
+            <span class="status-pill-text">CLAY EMBERS GLOWING • OPEN DAILY • BANDRA & OLD DELHI</span>
+          </div>
+        </div>
+
+        <!-- Large Editorial Headline & Floating Cursor Pointer -->
+        <div class="hero-header">
+          <div class="hero-title-wrap">
+            <h1 class="hero-main-title">
+              TANDOOR BAR
+            </h1>
+
+            <div class="hero-cursor-badge" aria-hidden="true">
+              <img src="assets/images/cursor.png" alt="" width="44" height="44" />
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Hero Featured Card (Cool Editorial Layout: Tandoori Wings & Recipe) -->
+        <div class="hero-featured-card">
+          <div class="hero-card-grid">
+            
+            <div class="hero-visual-stage" id="hero3DStage" role="region" aria-label="Interactive 3D Multi-Angle Dish Reel">
+              <!-- 3D Turntable Figure with Viewfinder Accents and Interactive Controls -->
+              <figure class="hero-food-figure hero-3d-turntable-container" id="heroFoodFigure" tabindex="0" aria-describedby="heroAngleDesc">
+                
+                <!-- Viewfinder Corner Accents -->
+                <span class="hero-viewfinder-corner top-left" aria-hidden="true"></span>
+                <span class="hero-viewfinder-corner top-right" aria-hidden="true"></span>
+                <span class="hero-viewfinder-corner bottom-left" aria-hidden="true"></span>
+                <span class="hero-viewfinder-corner bottom-right" aria-hidden="true"></span>
+
+                <!-- Top Studio Badges -->
+                <div class="hero-turntable-top-bar" aria-hidden="true">
+                  <div class="hero-tandoor-badge">
+                    <span class="flame-icon">🔥</span> 900°F CLAY OVEN
+                  </div>
+                </div>
+
+                <!-- 3D Scene Layer (Transformed with Real Perspective, Matrix & Pointer Physics) -->
+                <div class="hero-3d-scene" id="hero3DScene">
+                  
+                  <!-- Dynamic Specular Hearth Glare -->
+                  <div class="hero-hearth-glare" id="heroHearthGlare" aria-hidden="true"></div>
+
+                  <!-- Ember Spark Particles -->
+                  <div class="hero-ember-container" aria-hidden="true">
+                    <span class="ember-particle p1"></span>
+                    <span class="ember-particle p2"></span>
+                    <span class="ember-particle p3"></span>
+                    <span class="ember-particle p4"></span>
+                  </div>
+
+                  <!-- Multi-Angle Image Stack (4 Distinct Perspectives) -->
+                  <div class="hero-angle-images-stack" id="heroAngleStack">
+                    <img 
+                      src="assets/images/tandoori_chicken_hero.jpg" 
+                      alt="Angle 1: Charred tandoori chicken wings 45 degree isometric hero view" 
+                      class="hero-food-img hero-angle-img active" 
+                      data-angle="0"
+                      loading="eager"
+                    />
+                    <img 
+                      src="assets/images/tandoori_wings_topdown.jpg" 
+                      alt="Angle 2: Charred tandoori chicken wings 90 degree overhead flat lay presentation" 
+                      class="hero-food-img hero-angle-img" 
+                      data-angle="1"
+                      loading="lazy"
+                    />
+                    <img 
+                      src="assets/images/tandoori_wings_macro.jpg" 
+                      alt="Angle 3: Charred tandoori chicken wings 15 degree macro sizzle close-up" 
+                      class="hero-food-img hero-angle-img" 
+                      data-angle="2"
+                      loading="lazy"
+                    />
+                    <img 
+                      src="assets/images/tandoori_wings_hearth.jpg" 
+                      alt="Angle 4: Charred tandoori chicken wings roasting in clay tandoor hearth" 
+                      class="hero-food-img hero-angle-img" 
+                      data-angle="3"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <!-- 3D Under-Dish Drop Shadow -->
+                  <div class="hero-3d-dish-shadow" aria-hidden="true"></div>
+                </div>
+
+                <!-- Live Hover Perspective Indicator (Clean, No Option Buttons) -->
+                <figcaption class="hero-perspective-caption" aria-live="polite">
+                  <div class="hero-perspective-indicator">
+                    <span class="perspective-pulse-dot" aria-hidden="true"></span>
+                    <span id="heroAngleLabel" class="hero-angle-title">01 • 45° HERO ISOMETRIC</span>
+                  </div>
+                  <div class="hero-perspective-steps" aria-hidden="true" title="Hover left-to-right to rotate angles">
+                    <span class="step-pip active" data-step="0"></span>
+                    <span class="step-pip" data-step="1"></span>
+                    <span class="step-pip" data-step="2"></span>
+                    <span class="step-pip" data-step="3"></span>
+                  </div>
+                </figcaption>
+                <p class="sr-only" id="heroAngleDesc">Interactive 3D view of Charred Tandoori Wings. Hover left to right across the dish to rotate through 4 camera angles.</p>
+              </figure>
+            </div>
+
+            <div class="hero-spotlight-content">
+              
+              <!-- Dish Recipe Block: CHARRED TANDOORI WINGS ₹650 -->
+              <div class="hero-exact-dish-block">
+                <span class="hero-dish-badge">Signature Small Plate • Clay Oven</span>
+                <div class="hero-dish-headline">
+                  <span class="hero-dish-title-exact">CHARRED TANDOORI WINGS</span>
+                  <span class="hero-dish-price-exact">₹650</span>
+                </div>
+                <p class="hero-dish-ingredients">
+                  clay-oven chicken wings, kashmiri chili,<br />
+                  hung curd, smoked mustard oil, roasted kasoori methi, charred lime
+                </p>
+                <div class="hero-dish-tags">
+                  <span class="hero-tag">Clay Tandoor</span>
+                  <span class="hero-tag">24-Hr Marinade</span>
+                  <span class="hero-tag">Smoked Desi Ghee</span>
+                  <span class="hero-tag">House Char</span>
+                </div>
+                <div class="hero-live-counter">
+                  <span class="live-dot" aria-hidden="true"></span>
+                  <span>Ordered 38 times tonight in Bandra</span>
+                </div>
+              </div>
+
+              <div class="spotlight-actions">
+                <button type="button" class="btn-primary" onclick="addToCart({ id: 'tandoori-wings', name: 'Charred Tandoori Wings', price: 650, img: 'assets/images/tandoori_chicken_hero.jpg' })">
+                  Add to Bag • ₹650 <span aria-hidden="true">→</span>
+                </button>
+                <a href="#menu" class="btn-secondary">
+                  View Full Menu
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: ABOUT ("Break the naan. Share the table.")
+         ======================================================================= -->
+    <section class="section-block" id="about" style="border-top: 1px solid var(--color-border);">
+      <div class="container">
+        
+        <div class="about-main-grid">
+          
+          <!-- Interactive Poetic Stanza & Story -->
+          <div class="about-slurp-content">
+            
+            <div class="slurp-stanza" role="region" aria-label="Core Philosophy">
+              <div class="slurp-line" tabindex="0">
+                smoke and saffron.
+                <img src="assets/images/cursor.png" alt="" class="inline-cursor" aria-hidden="true" />
+              </div>
+              <div class="slurp-line" tabindex="0">
+                rich royal dum.
+                <img src="assets/images/cursor.png" alt="" class="inline-cursor" aria-hidden="true" />
+              </div>
+              <div class="slurp-line active" tabindex="0">
+                stories across the table.
+                <img src="assets/images/cursor.png" alt="" class="inline-cursor" aria-hidden="true" />
+              </div>
+              <div class="slurp-line" tabindex="0">
+                tradition in every bite.
+                <img src="assets/images/cursor.png" alt="" class="inline-cursor" aria-hidden="true" />
+              </div>
+            </div>
+
+            <!-- Indian Culinary Narrative -->
+            <p class="about-body-paragraph">
+              We began with a fiery clay oven and an obsession with heritage spices. Tandoor Bar honors regional Indian gastronomy through honest charcoal embers, slow-simmered handis, and hand-rolled breads. Visit us in Bandra West or Connaught Place, and experience what modern India tastes like—one feast at a time.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: INTERACTIVE EDITORIAL MENU (Modern Indian Gastronomy)
+         ======================================================================= -->
+    <section class="section-block bg-alt" id="menu">
+      <div class="container">
+        
+        <!-- Menu Editorial Header -->
+        <div class="menu-editorial-header">
+          <div class="menu-editorial-title-col">
+            <span class="tag-label">[Menu]</span>
+            <h2 class="section-title">The Tandoor <em>Menu</em></h2>
+            <p class="section-description">
+              Hand-ground whole spices, 900°F clay-oven kebabs, and slow-dum royal biryanis. Click or hover any category to explore.
+            </p>
+          </div>
+
+          <!-- Live Interactive Search & Dietary Filter Chips -->
+          <div class="menu-controls-bar">
+            <div class="menu-search-wrap">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input type="text" id="menuSearchInput" class="menu-search-input" placeholder="Search dishes, biryani, paneer, tikka..." aria-label="Search menu dishes" />
+            </div>
+            
+            <div class="menu-filter-chips" role="radiogroup" aria-label="Dietary and Category Filters">
+              <button type="button" class="menu-filter-chip active" data-filter="all" role="radio" aria-checked="true">All Dishes</button>
+              <button type="button" class="menu-filter-chip" data-filter="veg" role="radio" aria-checked="false">🌱 Pure Veg</button>
+              <button type="button" class="menu-filter-chip" data-filter="nonveg" role="radio" aria-checked="false">🍗 Non-Veg</button>
+              <button type="button" class="menu-filter-chip" data-filter="tandoor" role="radio" aria-checked="false">🔥 Clay Oven</button>
+              <button type="button" class="menu-filter-chip" data-filter="signature" role="radio" aria-checked="false">⭐ Signatures</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Column Interactive Layout: Categories (Small) | Dishes Stream | Live Dish Spotlight -->
+        <div class="menu-stage-grid">
+          
+          <!-- Left Column: Compact Editorial Categories (Small Font Size) -->
+          <nav class="menu-nav-categories" role="tablist" aria-label="Menu Categories">
+            <div class="menu-cat-header-label">Sections</div>
+            
+            <button type="button" class="menu-cat-btn active" data-cat="to-start" role="tab" aria-selected="true">
+              <span class="cat-idx">01</span>
+              <span class="cat-name">Chaat & Crunch</span>
+              <span class="cat-count">5</span>
+            </button>
+
+            <button type="button" class="menu-cat-btn" data-cat="tandoor" role="tab" aria-selected="false">
+              <span class="cat-idx">02</span>
+              <span class="cat-name">The Clay Oven</span>
+              <span class="cat-count">5</span>
+            </button>
+
+            <button type="button" class="menu-cat-btn" data-cat="biryani" role="tab" aria-selected="false">
+              <span class="cat-idx">03</span>
+              <span class="cat-name">Royal Dum Biryani</span>
+              <span class="cat-count">4</span>
+            </button>
+
+            <button type="button" class="menu-cat-btn" data-cat="curries" role="tab" aria-selected="false">
+              <span class="cat-idx">04</span>
+              <span class="cat-name">Heritage Curries</span>
+              <span class="cat-count">5</span>
+            </button>
+
+            <button type="button" class="menu-cat-btn" data-cat="breads" role="tab" aria-selected="false">
+              <span class="cat-idx">05</span>
+              <span class="cat-name">Breads & Sides</span>
+              <span class="cat-count">4</span>
+            </button>
+
+            <button type="button" class="menu-cat-btn" data-cat="dessert" role="tab" aria-selected="false">
+              <span class="cat-idx">06</span>
+              <span class="cat-name">Mithai & Desserts</span>
+              <span class="cat-count">4</span>
+            </button>
+          </nav>
+
+          <!-- Middle Column: Interactive Dishes Stream with Rich Information -->
+          <div class="menu-dishes-stream" id="menuSubitemsContainer" role="tabpanel" aria-label="Dishes in selected category">
+            <!-- Dynamically populated with rich interactive dish cards via app.js -->
+          </div>
+
+          <!-- Right Column: Live Interactive Dish Spotlight Showcase -->
+          <aside class="menu-spotlight-aside" aria-label="Featured Dish Spotlight">
+            <div class="menu-spotlight-card" id="menuSpotlightCard">
+              <div class="spotlight-img-wrap">
+                <span class="spotlight-tandoor-badge" id="spotlightBadge">🔥 900°F CLAY OVEN</span>
+                <img id="spotlightImg" src="assets/images/tandoori_chicken_hero.jpg" alt="Featured Dish Preview" class="spotlight-img" />
+              </div>
+              <div class="spotlight-info">
+                <div class="spotlight-top-row">
+                  <h4 class="spotlight-title" id="spotlightTitle">Truffle Dahi Puri</h4>
+                  <span class="spotlight-price" id="spotlightPrice">₹450</span>
+                </div>
+                <p class="spotlight-desc" id="spotlightDesc">
+                  Crisp semolina puris, whipped yogurt, winter black truffle oil, tamarind gel
+                </p>
+                <div class="spotlight-meta-tags" id="spotlightTags">
+                  <span class="dish-pill-tag">🌱 Veg</span>
+                  <span class="dish-pill-tag">⭐ House Special</span>
+                  <span class="dish-pill-tag">🌶️ Mild</span>
+                </div>
+                <button type="button" class="btn-primary spotlight-add-btn" id="spotlightAddBtn">
+                  Add to Bag • <span id="spotlightBtnPrice">₹450</span> →
+                </button>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- =======================================================================
+         SECTION 6: GALLERY (DARK MOODY THEME)
+         ======================================================================= -->
+    <section class="gallery-dark-section" id="gallery">
+      
+      <!-- Ghosted Watermark: Tandoor Bar -->
+      <div class="gallery-watermark-bg" aria-hidden="true">
+        Tandoor Bar
+      </div>
+
+      <div class="container">
+        
+        <!-- Gallery Top Controls Bar -->
+        <div class="gallery-top-controls">
+          <div class="gallery-header-info">
+            <span class="tag-label" style="color: #71717A;">[Photo Archive]</span>
+            <h2 class="gallery-headline">Atmospheric <em>Moments</em></h2>
+          </div>
+
+          <!-- Location Selector Pills -->
+          <div class="gallery-location-pills" role="tablist" aria-label="Location Gallery Switcher">
+            <button type="button" class="gallery-loc-btn active" data-loc="bandra" role="tab" aria-selected="true">Bandra Flagship</button>
+            <button type="button" class="gallery-loc-btn" data-loc="delhi" role="tab" aria-selected="false">South Delhi</button>
+            <button type="button" class="gallery-loc-btn" data-loc="bengaluru" role="tab" aria-selected="false">Bengaluru</button>
+          </div>
+
+          <!-- Arrow Carousel Controls -->
+          <div class="gallery-nav-arrows">
+            <button type="button" class="gallery-arrow-btn" id="galleryPrevBtn" aria-label="Previous photos">
+              ←
+            </button>
+            <button type="button" class="gallery-arrow-btn" id="galleryNextBtn" aria-label="Next photos">
+              →
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Sub-Pills (Hearth, Cocktails, Spaces) -->
+        <div class="gallery-category-chips" role="radiogroup" aria-label="Photo Theme Filter">
+          <button type="button" class="gallery-filter-chip active" data-cat="all">All Moments</button>
+          <button type="button" class="gallery-filter-chip" data-cat="hearth">🔥 Hearth & Tandoor</button>
+          <button type="button" class="gallery-filter-chip" data-cat="bar">🍸 Botanical Bar</button>
+          <button type="button" class="gallery-filter-chip" data-cat="interior">🏮 Dining Spaces</button>
+        </div>
+
+        <!-- Horizontal Animated Sliding Photo Strip -->
+        <div class="gallery-strip-container" id="galleryStrip" role="region" aria-label="Interactive Photo Carousel">
+          <!-- Dynamically populated via initGalleryPage in app.js -->
+        </div>
+
+        <!-- Interactive Bottom Bar: Progress Indicator & Hint -->
+        <div class="gallery-bottom-bar">
+          <div class="gallery-scroll-indicator">
+            <span class="gallery-counter" id="galleryCounter">01 / 06</span>
+            <div class="gallery-progress-track">
+              <div class="gallery-progress-fill" id="galleryProgressFill"></div>
+            </div>
+          </div>
+          <p class="gallery-hint-text">
+            Drag, scroll, or click any photograph to expand in fullscreen
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Interactive Fullscreen Lightbox Modal -->
+      <div class="gallery-lightbox-modal" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo Viewer" hidden>
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-dialog">
+          <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close fullscreen photo">×</button>
+          
+          <button type="button" class="lightbox-arrow-btn prev" id="lightboxPrevBtn" aria-label="Previous image">‹</button>
+          
+          <div class="lightbox-media-wrap">
+            <img id="lightboxImg" src="assets/images/tandoori_chicken_hero.jpg" alt="" class="lightbox-image" />
+            <div class="lightbox-caption-bar">
+              <div class="lightbox-badge" id="lightboxBadge">🔥 900°F Live Fire</div>
+              <h3 class="lightbox-title" id="lightboxTitle">Charred Tandoori Hearth</h3>
+              <p class="lightbox-desc" id="lightboxDesc">Clay oven hearth charred chicken wings marinated in Kashmiri degi mirch and hung yogurt.</p>
+              <span class="lightbox-counter-label" id="lightboxCounter">Photo 1 of 6</span>
+            </div>
+          </div>
+
+          <button type="button" class="lightbox-arrow-btn next" id="lightboxNextBtn" aria-label="Next image">›</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =======================================================================
+         SECTION 7: RESTAURANTS CHAIN DIRECTORY (Video Frames 00:11 & 00:44)
+         ======================================================================= -->
+    <section class="chain-directory-section" id="locations">
+      <div class="container">
+        
+        <header class="chain-directory-header">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-2);">
+            <div>
+              <span class="tag-label" style="margin-bottom: var(--space-1); display: inline-block;">[Locations]</span>
+              <h2 class="chain-directory-title">
+                DISCOVER OUR <em style="font-family: var(--font-serif); font-weight: 400; text-transform: lowercase;">places</em>
+              </h2>
+            </div>
+            <p class="chain-directory-subtext">
+              Award-winning clay-oven dining and slow-dum biryanis across Mumbai, New Delhi & Bengaluru.
+            </p>
+          </div>
+        </header>
+
+        <!-- Compact 2-Column Side-by-Side City Grid -->
+        <div class="chain-cities-grid">
+          
+          <!-- Mumbai Flagship Group -->
+          <div class="chain-city-group">
+            <div class="chain-city-title">
+              <span>MUMBAI</span>
+              <span class="city-badge">4 VENUES</span>
+            </div>
+
+            <div class="chain-numbered-row" tabindex="0">
+              <span class="chain-num">01</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/tandoori_chicken_hero.jpg" alt="Tandoor Bar Bandra" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">The Tandoor Bar</span>
+                <span class="chain-sublocation">Bandra West Flagship</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+
+            <div class="chain-numbered-row" tabindex="0">
+              <span class="chain-num">02</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/concept_bangbar.jpg" alt="Bombay Chaat Salon" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">Bombay Chaat Salon</span>
+                <span class="chain-sublocation">Colaba Heritage</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+
+            <div class="chain-numbered-row active" tabindex="0">
+              <span class="chain-num">03</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/butter_chicken_delhi.jpg" alt="Charcoal & Ghee Juhu" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">Charcoal & Ghee</span>
+                <span class="chain-sublocation">Juhu Beachside</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+
+            <div class="chain-numbered-row" tabindex="0">
+              <span class="chain-num">04</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/royal_dum_biryani.jpg" alt="Malabar Coastal Grill Worli" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">Malabar Coastal Grill</span>
+                <span class="chain-sublocation">Worli Seaface</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+          </div>
+
+          <!-- New Delhi & Bengaluru Group -->
+          <div class="chain-city-group">
+            <div class="chain-city-title">
+              <span>NEW DELHI & BENGALURU</span>
+              <span class="city-badge">3 VENUES</span>
+            </div>
+
+            <div class="chain-numbered-row" tabindex="0">
+              <span class="chain-num">01</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/concept_kabawa.jpg" alt="Dawat Room Delhi" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">Dawat Room</span>
+                <span class="chain-sublocation">Connaught Place, New Delhi</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+
+            <div class="chain-numbered-row" tabindex="0">
+              <span class="chain-num">02</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/concept_momofuku.jpg" alt="Deccan Spice Guild Bengaluru" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">Deccan Spice Guild</span>
+                <span class="chain-sublocation">Indiranagar, Bengaluru</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+
+            <div class="chain-numbered-row" tabindex="0">
+              <span class="chain-num">03</span>
+              <div class="chain-preview-thumb">
+                <img src="assets/images/royal_dum_biryani.jpg" alt="Awadh Clay Handi Mehrauli" />
+              </div>
+              <div class="chain-name-col">
+                <span class="chain-name">Awadh Clay Handi</span>
+                <span class="chain-sublocation">Mehrauli, New Delhi</span>
+              </div>
+              <div class="chain-circle-arrow" aria-hidden="true">→</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Catering & Events Section (Exact Video Frame 00:40–00:41 Reproduction) -->
+    <section class="section-block" style="background-color: #070709; color: #FFFFFF; padding-top: var(--space-6); padding-bottom: var(--space-6);">
+      <div class="container">
+        <span class="tag-label" style="color: #71717A;">[Services]</span>
+
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-8); align-items: flex-start; margin-bottom: var(--space-8);">
+          
+          <div>
+            <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-4);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: #1F1F24; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-gold);">
+                <span style="font-size: 1.125rem;">✨</span>
+              </div>
+              <div>
+                <div style="font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">TANDOOR BAR CONCIERGE</div>
+                <div style="font-size: 0.75rem; color: #71717A;">Bespoke Dawat & Feasts Team</div>
+              </div>
+            </div>
+
+            <!-- Exact Layout from Video Frame 00:40 -->
+            <h3 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin-bottom: var(--space-3);">
+              Tandoor Bar® organizes royal feasts and private dawat catering
+            </h3>
+            <p style="font-size: 0.9375rem; color: #A1A1A6; line-height: 1.6; margin-bottom: var(--space-4);">
+              — for wedding celebrations, corporate galas, private soirees, and live-fire pop-ups. We bring live clay tandoors, copper handis, bespoke spice pairings, and attentive white-glove hospitality to your venue.
+            </p>
+            <p style="font-size: 0.875rem; color: #71717A;">
+              Meticulously crafted regional menus and live charcoal service with our master culinary team
+            </p>
+          </div>
+
+          <!-- Neighborhood Locations List (from Video Frame 00:40) -->
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #71717A; margin-bottom: var(--space-2);">
+              Signature Cities
+            </div>
+            <div style="font-size: 2rem; font-weight: 600; line-height: 1.3;">
+              <div style="color: #52525A;">Bandra West</div>
+              <div style="color: #8E8E93;">Colaba</div>
+              <div style="color: #FFFFFF;">Connaught Place</div>
+              <div style="color: #FFFFFF;">Mehrauli</div>
+              <div style="color: #FFFFFF;">Indiranagar</div>
+              <div style="color: #52525A;">Jubilee Hills, Hyderabad</div>
+              <div style="color: #3A3A40;">Dubai DIFC</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+          <div style="border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 16 / 9;">
+            <img src="assets/images/royal_dum_biryani.jpg" alt="Live Dum Biryani Catering Handi" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <div style="border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 16 / 9;">
+            <img src="assets/images/butter_chicken_delhi.jpg" alt="Rich Makhani and Fresh Naan Catering Platter" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modern Indian Flavors Banner (Exact Video Frame 00:44–00:45 Reproduction) -->
+    <section class="modern-flavors-dark-banner">
+      <div class="container">
+        
+        <div class="concept-cards-row">
+          <div class="concept-card">
+            <div class="concept-card-img-wrap">
+              <img src="assets/images/tandoori_chicken_hero.jpg" alt="Tandoor Bar concept" />
+            </div>
+            <div class="concept-card-name">The Tandoor Bar</div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-card-img-wrap">
+              <img src="assets/images/concept_bangbar.jpg" alt="Bombay Chaat Salon concept" />
+            </div>
+            <div class="concept-card-name">Chaat Salon</div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-card-img-wrap">
+              <img src="assets/images/butter_chicken_delhi.jpg" alt="Charcoal & Ghee concept" />
+            </div>
+            <div class="concept-card-name">Charcoal & Ghee</div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-card-img-wrap">
+              <img src="assets/images/royal_dum_biryani.jpg" alt="Awadh Handi concept" />
+            </div>
+            <div class="concept-card-name">Awadh Handi</div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-card-img-wrap">
+              <img src="assets/images/concept_momofuku.jpg" alt="Malabar Coastal concept" />
+            </div>
+            <div class="concept-card-name">Malabar Coastal</div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-card-img-wrap">
+              <img src="assets/images/royal_dum_biryani.jpg" alt="Mithai Atelier concept" />
+            </div>
+            <div class="concept-card-name">Mithai Atelier</div>
+          </div>
+        </div>
+
+        <h2 class="modern-flavors-title">
+          MODERN<br />
+          INDIAN FLAVORS
+        </h2>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #FFF;">
+            ↓
+          </div>
+          <span style="font-size: 0.8125rem; color: #71717A;">Tandoor Bar</span>
+        </div>
+
+      </div>
+    </section>
+
+      <!-- =======================================================================
+         SECTION 8: STREAMLINED TABLE RESERVATIONS
+         ======================================================================= -->
+    <section class="section-block" id="reservations">
+      <div class="container">
+        
+        <header class="section-head text-center" style="text-align: center; max-width: 680px; margin: 0 auto var(--space-8);">
+          <span class="tag-label">[Reservations]</span>
+          <h2 class="section-title">Reserve Your <em>Table</em></h2>
+          <p class="section-description">
+            Experience glowing clay-oven dining and slow-cooked Awadhi feasts in Bandra West & Connaught Place. Instant confirmation with zero booking fees.
+          </p>
+        </header>
+
+        <div class="booking-console-card">
+          <form id="reservationForm" novalidate>
+            
+            <!-- Quick Step 1: Party Size (Interactive Segmented Pills) -->
+            <div class="booking-step-block">
+              <div class="booking-step-header">
+                <span class="booking-step-label">1. Party Size</span>
+                <span class="booking-step-hint">Walk-ins also welcome at the tandoor counter</span>
+              </div>
+              <div class="booking-pills-row" id="guestPillGroup" role="radiogroup" aria-label="Number of Guests">
+                <button type="button" class="booking-pill" data-value="1 Guest" role="radio" aria-checked="false">1 Guest</button>
+                <button type="button" class="booking-pill active" data-value="2 Guests" role="radio" aria-checked="true">2 Guests</button>
+                <button type="button" class="booking-pill" data-value="4 Guests" role="radio" aria-checked="false">4 Guests</button>
+                <button type="button" class="booking-pill" data-value="6 Guests" role="radio" aria-checked="false">6 Guests</button>
+                <button type="button" class="booking-pill" data-value="8+ Feast" role="radio" aria-checked="false">8+ Feast</button>
+              </div>
+            </div>
+
+            <!-- Quick Step 2: Date -->
+            <div class="booking-step-block">
+              <div class="booking-step-header">
+                <span class="booking-step-label">2. Date</span>
+                <span class="booking-step-hint">Up to 30 days in advance</span>
+              </div>
+              <div class="booking-pills-row" id="datePillGroup" role="radiogroup" aria-label="Reservation Date">
+                <button type="button" class="booking-pill active" data-value="Tonight" role="radio" aria-checked="true">Tonight</button>
+                <button type="button" class="booking-pill" data-value="Tomorrow" role="radio" aria-checked="false">Tomorrow</button>
+                <button type="button" class="booking-pill" data-value="This Friday" role="radio" aria-checked="false">This Friday</button>
+                <button type="button" class="booking-pill" data-value="This Saturday" role="radio" aria-checked="false">This Saturday</button>
+                <label class="booking-pill date-picker-pill" title="Choose specific date">
+                  <span id="datePickerLabel">Custom Date 📅</span>
+                  <input type="date" id="reserveDateInput" class="hidden-date-input" aria-label="Custom Date Picker" />
+                </label>
+              </div>
+            </div>
+
+            <!-- Quick Step 3: Prime Dining Times -->
+            <div class="booking-step-block">
+              <div class="booking-step-header">
+                <span class="booking-step-label">3. Prime Dining Times</span>
+                <span class="booking-step-hint">Live charcoal ember service</span>
+              </div>
+              <div class="booking-times-row" id="timeSlotGroup" role="radiogroup" aria-label="Dining Time Slots">
+                <button type="button" class="booking-time-card" data-time="1:00 PM" role="radio" aria-checked="false">
+                  <span class="time-hour">1:00 PM</span>
+                  <span class="time-meta">Lunch Service</span>
+                </button>
+                <button type="button" class="booking-time-card" data-time="7:15 PM" role="radio" aria-checked="false">
+                  <span class="time-hour">7:15 PM</span>
+                  <span class="time-meta">Early Dinner</span>
+                </button>
+                <button type="button" class="booking-time-card active" data-time="8:00 PM" role="radio" aria-checked="true">
+                  <span class="time-hour">8:00 PM</span>
+                  <span class="time-meta">Prime Ember Hour</span>
+                </button>
+                <button type="button" class="booking-time-card" data-time="8:45 PM" role="radio" aria-checked="false">
+                  <span class="time-hour">8:45 PM</span>
+                  <span class="time-meta">Popular</span>
+                </button>
+                <button type="button" class="booking-time-card" data-time="9:30 PM" role="radio" aria-checked="false">
+                  <span class="time-hour">9:30 PM</span>
+                  <span class="time-meta">Late Feast</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Booking Bar Footer: Location & Big Instant Button -->
+            <div class="booking-console-footer">
+              <div class="custom-dropdown-wrap" id="locationDropdownWrap">
+                <button type="button" class="booking-location-btn" id="locationDropdownBtn" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="location-icon" aria-hidden="true">📍</span>
+                  <span id="locationSelectedText">Bandra West Flagship (Mumbai)</span>
+                  <span class="location-chevron" aria-hidden="true">▾</span>
+                </button>
+                
+                <ul class="custom-dropdown-menu" id="locationDropdownMenu" role="listbox" aria-label="Select Restaurant Location">
+                  <li class="custom-dropdown-item active" data-value="Bandra West Flagship, Mumbai" data-label="Bandra West Flagship (Mumbai)" role="option" aria-selected="true">
+                    <span class="city-name">Bandra West Flagship</span>
+                    <span class="city-sub">Mumbai • Pali Hill Road</span>
+                  </li>
+                  <li class="custom-dropdown-item" data-value="Connaught Place, New Delhi" data-label="Connaught Place (New Delhi)" role="option" aria-selected="false">
+                    <span class="city-name">Connaught Place</span>
+                    <span class="city-sub">New Delhi • Inner Circle</span>
+                  </li>
+                  <li class="custom-dropdown-item" data-value="Indiranagar, Bengaluru" data-label="Indiranagar (Bengaluru)" role="option" aria-selected="false">
+                    <span class="city-name">Indiranagar</span>
+                    <span class="city-sub">Bengaluru • 100ft Road</span>
+                  </li>
+                  <li class="custom-dropdown-item" data-value="Jubilee Hills, Hyderabad" data-label="Jubilee Hills (Hyderabad)" role="option" aria-selected="false">
+                    <span class="city-name">Jubilee Hills</span>
+                    <span class="city-sub">Hyderabad • Road No. 36</span>
+                  </li>
+                </ul>
+                
+                <select id="reserveLocation" class="sr-only" aria-hidden="true" tabindex="-1">
+                  <option value="Bandra West Flagship, Mumbai" selected>Bandra West Flagship (Mumbai)</option>
+                  <option value="Connaught Place, New Delhi">Connaught Place (New Delhi)</option>
+                  <option value="Indiranagar, Bengaluru">Indiranagar (Bengaluru)</option>
+                  <option value="Jubilee Hills, Hyderabad">Jubilee Hills (Hyderabad)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="booking-submit-hero-btn" id="submitReservationBtn">
+                <span class="btn-main-label" id="btnDynamicSummary">Confirm Table for 2 • 8:00 PM Tonight</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="booking-trust-bar">
+              <span class="trust-item"><span class="trust-icon">⚡</span> Instant SMS Confirmation</span>
+              <span class="trust-item"><span class="trust-icon">✓</span> Zero Booking Fees</span>
+              <span class="trust-item"><span class="trust-icon">🕒</span> Table Held for 15 Min</span>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Site Footer (Exact Video Frame 00:43) -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="#home" class="brand-logo" aria-label="Tandoor Bar Home">
+            Tandoor <span class="logo-bar">Bar</span>
+          </a>
+          <p class="footer-tagline">
+            Modern Indian gastronomy and woodfire clay oven craft for unforgettable gatherings.
+          </p>
+          <div style="font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.6; margin-top: var(--space-2);">
+            <div><strong>Flagship:</strong> 24 Pali Hill, Bandra West, Mumbai 400050</div>
+            <div><strong>Reservations:</strong> +91 22 4910 8888</div>
+            <div><strong>Email:</strong> reservations@tandoorbar.in</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Experiences</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#reservations">Private Dawat</a></li>
+            <li><a href="#locations">Live Tandoor Catering</a></li>
+            <li><a href="#reservations">Tasting Table Reservations</a></li>
+            <li><a href="#menu">Handi Takeout</a></li>
+            <li><a href="#home">Artisanal Delivery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Craft</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#menu">Regional Dum Biryanis</a></li>
+            <li><a href="#menu">Clay Oven Kebabs</a></li>
+            <li><a href="#gallery">Cocktails & Spices</a></li>
+            <li><a href="#about">Heritage Ghee & Sourcing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Philosophy</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#gallery">Archive</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>© 2026 Tandoor Bar Hospitality Group. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#about">Imprint</a>
+          <a href="#about">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Offcanvas Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Your Ordering Bag">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Bag</h3>
+      <button type="button" class="btn-close-drawer" id="closeCartBtn" aria-label="Close bag drawer">✕</button>
+    </div>
+    <div class="drawer-body" id="cartDrawerItems"></div>
+    <div class="drawer-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹1,400</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>Total (incl. GST)</span>
+        <span id="cartTotal">₹1,470</span>
+      </div>
+      <button type="button" class="btn-primary" style="width: 100%; justify-content: center;" id="checkoutBtn">
+        Proceed to Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
+
+  <!-- Reservation Confirmation Modal -->
+  <div class="modal-box" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-icon-badge" aria-hidden="true">✓</div>
+    <h3 class="modal-title" id="modalTitle">Table Reserved!</h3>
+    <p class="modal-desc" id="modalDesc">We look forward to welcoming you to Tandoor Bar.</p>
+    <div class="booking-ticket" id="modalTicket"></div>
+    <button type="button" class="btn-primary" id="closeModalBtn" style="width: 100%;">Got It</button>
+  </div>
+
+  <div class="toast-notice" id="appToast" role="status" aria-live="polite"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
